@@ -34,7 +34,7 @@ run() {
   echo "EXEC: $@" > /dev/kmsg
   "$@"
 }
-mount -t proc none /proc
+mount -t proc proc /proc
 
 log "INIT READONLY OVERLAYFS"
 
