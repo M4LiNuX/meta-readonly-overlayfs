@@ -1,0 +1,236 @@
+--- Starting bitbake server pid 24376 at 2020-08-02 22:39:39.801140 ---
+Started bitbake server pid 24376
+DEBUG: BBCooker starting 1596400779.8029268
+DEBUG: BBCooker pyinotify1 1596400779.8092313
+DEBUG: BBCooker pyinotify2 1596400779.8095372
+DEBUG: BBCooker pyinotify3 1596400779.8146946
+DEBUG: BBCooker pyinotify complete 1596400779.814892
+DEBUG: Found bblayers.conf (/e/home/dheini/build/COMBOX_SW/build/conf/bblayers.conf)
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta-poky
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-openembedded/meta-oe
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-openembedded/meta-networking
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-openembedded/meta-python
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-openembedded/meta-multimedia
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-phytec
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-yogurt
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-pbacd14
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-qt5
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-rauc
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-combox
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-cml
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-rootfs-overlay
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:746: including conf/abi_version.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:747: including conf/site.conf
+DEBUG: CONF file 'conf/site.conf' not found
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:748: including conf/auto.conf
+DEBUG: CONF file 'conf/auto.conf' not found
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:749: including conf/local.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:750: including conf/multiconfig/default.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:751: including conf/machine/phygate-sirius-2-nand.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-pbacd14/conf/machine/phygate-sirius-2-nand.conf:7: including conf/machine/include/phyimx6ul.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-phytec/conf/machine/include/phyimx6ul.inc:2: including conf/machine/include/soc-family.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-phytec/conf/machine/include/phyimx6ul.inc:7: including conf/machine/include/tune-cortexa7.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/tune-cortexa7.inc:3: including conf/machine/include/arm/arch-armv7ve.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv7ve.inc:8: including conf/machine/include/arm/arch-armv7a.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv7a.inc:8: including conf/machine/include/arm/arch-armv6.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv6.inc:8: including conf/machine/include/arm/arch-armv5-dsp.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv5-dsp.inc:4: including conf/machine/include/arm/arch-armv5.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv5.inc:8: including conf/machine/include/arm/arch-armv4.inc
+Entering server connection loop
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv4.inc:15: including conf/machine/include/arm/arch-arm.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv4.inc:16: including conf/machine/include/arm/feature-arm-thumb.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv5.inc:9: including conf/machine/include/arm/feature-arm-vfp.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv7a.inc:9: including conf/machine/include/arm/feature-arm-neon.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:752: including conf/machine-sdk/x86_64.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:753: including conf/distro/yogurt.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-yogurt/conf/distro/yogurt.conf:1: including conf/distro/poky.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta-poky/conf/distro/poky.conf:96: including conf/distro/include/poky-world-exclude.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta-poky/conf/distro/poky.conf:97: including conf/distro/include/no-static-libs.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta-poky/conf/distro/poky.conf:98: including conf/distro/include/yocto-uninative.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-yogurt/conf/distro/yogurt.conf:2: including common.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:754: including conf/distro/defaultsetup.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:1: including conf/distro/include/default-providers.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:2: including conf/distro/include/default-versions.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:3: including conf/distro/include/default-distrovars.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:4: including conf/distro/include/world-broken.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:7: including conf/distro/include/tcmode-default.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/include/tcmode-default.inc:73: including conf/distro/include/as-needed.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:10: including conf/distro/include/tclibc-glibc.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:12: including conf/distro/include/uninative-flags.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:755: including conf/documentation.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:756: including conf/licenses.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:757: including conf/sanity.conf
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/patch.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:4)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/terminal.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/patch.bbclass:11)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/staging.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:5)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/mirrors.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:7)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/utils.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:8)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/utility-tasks.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:9)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/metadata_scm.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:10)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/logging.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:11)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/archiver.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/copyleft_filter.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/archiver.bbclass:31)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta-poky/classes/poky-sanity.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/uninative.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/sanity.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-phytec/classes/phytec-mirrors.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/insane.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/buildhistory.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/buildstats.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/image-prelink.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/linuxloader.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/image-prelink.bbclass:9)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/image-mklibs.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/package_ipk.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/package.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/package_ipk.bbclass:1)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/packagedata.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/package.bbclass:41)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/chrpath.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/package.bbclass:42)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/debian.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/devshell.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/sstate.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/license.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/remove-libtool.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/blacklist.bbclass (from configuration INHERITs:0)
+DEBUG: Clearing SRCREV cache due to cache policy of: clear
+DEBUG: Using cache in '/e/home/dheini/build/COMBOX_SW/build/cache/local_file_checksum_cache.dat'
+DEBUG: Using cache in '/e/home/dheini/build/COMBOX_SW/build/cache/bb_codeparser.dat'
+DEBUG: Enabling uninative
+DEBUG: BBCooker parsed base configuration 1596400780.0835497
+DEBUG: BBCooker startup complete 1596400780.0837321
+Accepting [<socket.socket fd=7, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, laddr=bitbake.sock>] ([])
+Processing Client
+Connecting Client
+Running command ['setFeatures', [2]]
+Running command ['updateConfig', {'abort': True, 'force': False, 'invalidate_stamp': None, 'verbose': False, 'debug': 0, 'dry_run': False, 'dump_signatures': [], 'debug_domains': [], 'extra_assume_provided': [], 'profile': False, 'prefile': [], 'postfile': [], 'server_timeout': None}, {'USER': 'dheini', 'PWD': '/e/home/dheini/build/COMBOX_SW/sources/meta-rootfs-overlay/recipes-kernel/linux', 'HOME': '/d/home/dheini', 'BBPATH': '/e/home/dheini/build/COMBOX_SW/build', 'BB_ENV_EXTRAWHITE': 'ALL_PROXY BBPATH_EXTRA BB_NO_NETWORK BB_NUMBER_THREADS BB_SETSCENE_ENFORCE BB_SRCREV_POLICY DISTRO FTPS_PROXY FTP_PROXY GIT_PROXY_COMMAND HTTPS_PROXY HTTP_PROXY MACHINE NO_PROXY PARALLEL_MAKE SCREENDIR SDKMACHINE SOCKS5_PASSWD SOCKS5_USER SSH_AGENT_PID SSH_AUTH_SOCK STAMPS_DIR TCLIBC TCMODE all_proxy ftp_proxy ftps_proxy http_proxy https_proxy no_proxy ', 'TERM': 'xterm', 'SHELL': '/bin/bash', 'LOGNAME': 'dheini', 'PATH': '/e/home/dheini/build/COMBOX_SW/sources/poky/scripts:/e/home/dheini/build/COMBOX_SW/sources/poky/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/puppetlabs/bin:/snap/bin:/d/tools/bin:/d/home/dheini/bin:/d/home/dheini/.local/bin:/d/home/dheini/.local/bin', 'LC_ALL': 'en_US.UTF-8', 'LD_LIBRARY_PATH': '/usr/lib/i386-linux-gnu-COMPAT:/usr/lib/x86_64-linux-gnu-COMPAT:/usr/lib/oracle/12.1/client64/lib:/usr/lib/oracle/11.2/client/lib', 'SSH_CONNECTION': '192.168.200.1 52727 192.168.200.36 22', 'LANG': 'en_US.UTF-8', 'DISPLAY': 'localhost:10.0', 'HOSTNAME': 'wievp10165a', 'OLDPWD': '/e/home/dheini/build/COMBOX_SW/sources/meta-rootfs-overlay/recipes-kernel/linux/files', 'EDITOR': 'vim', 'XDG_SESSION_ID': '7', 'SVN_MERGE': 'bcompare', 'SSH_CLIENT': '192.168.200.1 52727 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'NLS_LANG': 'AMERICAN_AMERICA.UTF8', 'EUMG_TOOLS': '/d/home/dheini/bin/eumg', 'BUILD_PATH': '/d/home/dheini/build', 'BUILDDIR': '/e/home/dheini/build/COMBOX_SW/build', 'SSH_TTY': '/dev/pts/0', 'MAIL': '/var/mail/dheini', 'TNS_ADMIN': '/usr/lib/oracle/12.1/client64', 'SHLVL': '1', 'MANPATH': ':/opt/puppetlabs/puppet/share/man', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1111/bus', 'XDG_RUNTIME_DIR': '/run/user/1111', 'HGETROOT': 'SVN:http://vmprjsrv02/svn', 'PS1': '\\[\\033[0;31m\\]\\t \\[\\033[0;34m\\]\\u@\\h: $PWD\\n\\[\\033[0m\\]', 'PS2': '>> ', 'SVNROOT': 'http://vmprjsrv02/svn', '_': '/e/home/dheini/build/COMBOX_SW/sources/poky/bitbake/bin/bitbake'}, ['/e/home/dheini/build/COMBOX_SW/sources/poky/bitbake/bin/bitbake', 'linux-mainline']]
+Running command ['getVariable', 'BBINCLUDELOGS']
+Running command ['getVariable', 'BBINCLUDELOGS_LINES']
+Running command ['getSetVariable', 'BB_CONSOLELOG']
+Running command ['getUIHandlerNum']
+Running command ['setEventMask', 1, 20, {}, ['bb.runqueue.runQueueExitWait', 'bb.event.LogExecTTY', 'logging.LogRecord', 'bb.build.TaskFailed', 'bb.build.TaskBase', 'bb.event.ParseStarted', 'bb.event.ParseProgress', 'bb.event.ParseCompleted', 'bb.event.CacheLoadStarted', 'bb.event.CacheLoadProgress', 'bb.event.CacheLoadCompleted', 'bb.command.CommandFailed', 'bb.command.CommandExit', 'bb.command.CommandCompleted', 'bb.cooker.CookerExit', 'bb.event.MultipleProviders', 'bb.event.NoProvider', 'bb.runqueue.sceneQueueTaskStarted', 'bb.runqueue.runQueueTaskStarted', 'bb.runqueue.runQueueTaskFailed', 'bb.runqueue.sceneQueueTaskFailed', 'bb.event.BuildBase', 'bb.build.TaskStarted', 'bb.build.TaskSucceeded', 'bb.build.TaskFailedSilent', 'bb.build.TaskProgress', 'bb.event.ProcessStarted', 'bb.event.ProcessProgress', 'bb.event.ProcessFinished']]
+Running command ['getVariable', 'BB_DEFAULT_TASK']
+Running command ['setConfig', 'cmd', 'build']
+Running command ['buildTargets', ['linux-mainline'], 'build']
+Running command ['stateShutdown']
+Running command ['stateForceShutdown']
+Processing Client
+Disconnecting Client
+No timeout, exiting.
+Exiting
+--- Starting bitbake server pid 25165 at 2020-08-02 22:40:59.342127 ---
+Started bitbake server pid 25165
+DEBUG: BBCooker starting 1596400859.3435903
+DEBUG: BBCooker pyinotify1 1596400859.3520732
+DEBUG: BBCooker pyinotify2 1596400859.3522754
+DEBUG: BBCooker pyinotify3 1596400859.3559394
+DEBUG: BBCooker pyinotify complete 1596400859.3561065
+DEBUG: Found bblayers.conf (/e/home/dheini/build/COMBOX_SW/build/conf/bblayers.conf)
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta-poky
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-openembedded/meta-oe
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-openembedded/meta-networking
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-openembedded/meta-python
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-openembedded/meta-multimedia
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-phytec
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-yogurt
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-pbacd14
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-qt5
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-rauc
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-combox
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-cml
+DEBUG: Adding layer /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-rootfs-overlay
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:746: including conf/abi_version.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:747: including conf/site.conf
+DEBUG: CONF file 'conf/site.conf' not found
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:748: including conf/auto.conf
+DEBUG: CONF file 'conf/auto.conf' not found
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:749: including conf/local.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:750: including conf/multiconfig/default.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:751: including conf/machine/phygate-sirius-2-nand.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-pbacd14/conf/machine/phygate-sirius-2-nand.conf:7: including conf/machine/include/phyimx6ul.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-phytec/conf/machine/include/phyimx6ul.inc:2: including conf/machine/include/soc-family.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-phytec/conf/machine/include/phyimx6ul.inc:7: including conf/machine/include/tune-cortexa7.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/tune-cortexa7.inc:3: including conf/machine/include/arm/arch-armv7ve.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv7ve.inc:8: including conf/machine/include/arm/arch-armv7a.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv7a.inc:8: including conf/machine/include/arm/arch-armv6.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv6.inc:8: including conf/machine/include/arm/arch-armv5-dsp.inc
+Entering server connection loop
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv5-dsp.inc:4: including conf/machine/include/arm/arch-armv5.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv5.inc:8: including conf/machine/include/arm/arch-armv4.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv4.inc:15: including conf/machine/include/arm/arch-arm.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv4.inc:16: including conf/machine/include/arm/feature-arm-thumb.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv5.inc:9: including conf/machine/include/arm/feature-arm-vfp.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/machine/include/arm/arch-armv7a.inc:9: including conf/machine/include/arm/feature-arm-neon.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:752: including conf/machine-sdk/x86_64.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:753: including conf/distro/yogurt.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-yogurt/conf/distro/yogurt.conf:1: including conf/distro/poky.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta-poky/conf/distro/poky.conf:96: including conf/distro/include/poky-world-exclude.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta-poky/conf/distro/poky.conf:97: including conf/distro/include/no-static-libs.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta-poky/conf/distro/poky.conf:98: including conf/distro/include/yocto-uninative.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-yogurt/conf/distro/yogurt.conf:2: including common.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:754: including conf/distro/defaultsetup.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:1: including conf/distro/include/default-providers.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:2: including conf/distro/include/default-versions.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:3: including conf/distro/include/default-distrovars.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:4: including conf/distro/include/world-broken.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:7: including conf/distro/include/tcmode-default.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/include/tcmode-default.inc:73: including conf/distro/include/as-needed.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:10: including conf/distro/include/tclibc-glibc.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/distro/defaultsetup.conf:12: including conf/distro/include/uninative-flags.inc
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:755: including conf/documentation.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:756: including conf/licenses.conf
+DEBUG: CONF /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/conf/bitbake.conf:757: including conf/sanity.conf
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/patch.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:4)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/terminal.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/patch.bbclass:11)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/staging.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:5)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/mirrors.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:7)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/utils.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:8)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/utility-tasks.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:9)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/metadata_scm.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:10)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/logging.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/base.bbclass:11)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/archiver.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/copyleft_filter.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/archiver.bbclass:31)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta-poky/classes/poky-sanity.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/uninative.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/sanity.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/../meta-phytec/classes/phytec-mirrors.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/insane.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/buildhistory.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/buildstats.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/image-prelink.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/linuxloader.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/image-prelink.bbclass:9)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/image-mklibs.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/package_ipk.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/package.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/package_ipk.bbclass:1)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/packagedata.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/package.bbclass:41)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/chrpath.bbclass (from /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/package.bbclass:42)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/debian.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/devshell.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/sstate.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/license.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/remove-libtool.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /e/home/dheini/build/COMBOX_SW/build/../sources/poky/meta/classes/blacklist.bbclass (from configuration INHERITs:0)
+DEBUG: Clearing SRCREV cache due to cache policy of: clear
+DEBUG: Using cache in '/e/home/dheini/build/COMBOX_SW/build/cache/local_file_checksum_cache.dat'
+DEBUG: Using cache in '/e/home/dheini/build/COMBOX_SW/build/cache/bb_codeparser.dat'
+DEBUG: Enabling uninative
+DEBUG: BBCooker parsed base configuration 1596400859.7007291
+DEBUG: BBCooker startup complete 1596400859.7009077
+Accepting [<socket.socket fd=7, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, laddr=bitbake.sock>] ([])
+Processing Client
+Connecting Client
+Running command ['setFeatures', [2]]
+Running command ['updateConfig', {'abort': True, 'force': False, 'invalidate_stamp': None, 'verbose': False, 'debug': 0, 'dry_run': False, 'dump_signatures': [], 'debug_domains': [], 'extra_assume_provided': [], 'profile': False, 'prefile': [], 'postfile': [], 'server_timeout': None}, {'USER': 'dheini', 'PWD': '/e/home/dheini/build/COMBOX_SW/sources/meta-rootfs-overlay/recipes-kernel/linux', 'HOME': '/d/home/dheini', 'BBPATH': '/e/home/dheini/build/COMBOX_SW/build', 'BB_ENV_EXTRAWHITE': 'ALL_PROXY BBPATH_EXTRA BB_NO_NETWORK BB_NUMBER_THREADS BB_SETSCENE_ENFORCE BB_SRCREV_POLICY DISTRO FTPS_PROXY FTP_PROXY GIT_PROXY_COMMAND HTTPS_PROXY HTTP_PROXY MACHINE NO_PROXY PARALLEL_MAKE SCREENDIR SDKMACHINE SOCKS5_PASSWD SOCKS5_USER SSH_AGENT_PID SSH_AUTH_SOCK STAMPS_DIR TCLIBC TCMODE all_proxy ftp_proxy ftps_proxy http_proxy https_proxy no_proxy ', 'TERM': 'xterm', 'SHELL': '/bin/bash', 'LOGNAME': 'dheini', 'PATH': '/e/home/dheini/build/COMBOX_SW/sources/poky/scripts:/e/home/dheini/build/COMBOX_SW/sources/poky/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/puppetlabs/bin:/snap/bin:/d/tools/bin:/d/home/dheini/bin:/d/home/dheini/.local/bin:/d/home/dheini/.local/bin', 'LC_ALL': 'en_US.UTF-8', 'LD_LIBRARY_PATH': '/usr/lib/i386-linux-gnu-COMPAT:/usr/lib/x86_64-linux-gnu-COMPAT:/usr/lib/oracle/12.1/client64/lib:/usr/lib/oracle/11.2/client/lib', 'SSH_CONNECTION': '192.168.200.1 52727 192.168.200.36 22', 'LANG': 'en_US.UTF-8', 'DISPLAY': 'localhost:10.0', 'HOSTNAME': 'wievp10165a', 'OLDPWD': '/e/home/dheini/build/COMBOX_SW/sources/meta-rootfs-overlay/recipes-kernel/linux/files', 'EDITOR': 'vim', 'XDG_SESSION_ID': '7', 'SVN_MERGE': 'bcompare', 'SSH_CLIENT': '192.168.200.1 52727 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'NLS_LANG': 'AMERICAN_AMERICA.UTF8', 'EUMG_TOOLS': '/d/home/dheini/bin/eumg', 'BUILD_PATH': '/d/home/dheini/build', 'BUILDDIR': '/e/home/dheini/build/COMBOX_SW/build', 'SSH_TTY': '/dev/pts/0', 'MAIL': '/var/mail/dheini', 'TNS_ADMIN': '/usr/lib/oracle/12.1/client64', 'SHLVL': '1', 'MANPATH': ':/opt/puppetlabs/puppet/share/man', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1111/bus', 'XDG_RUNTIME_DIR': '/run/user/1111', 'HGETROOT': 'SVN:http://vmprjsrv02/svn', 'PS1': '\\[\\033[0;31m\\]\\t \\[\\033[0;34m\\]\\u@\\h: $PWD\\n\\[\\033[0m\\]', 'PS2': '>> ', 'SVNROOT': 'http://vmprjsrv02/svn', '_': '/e/home/dheini/build/COMBOX_SW/sources/poky/bitbake/bin/bitbake'}, ['/e/home/dheini/build/COMBOX_SW/sources/poky/bitbake/bin/bitbake', 'combox-bundle']]
+Running command ['getVariable', 'BBINCLUDELOGS']
+Running command ['getVariable', 'BBINCLUDELOGS_LINES']
+Running command ['getSetVariable', 'BB_CONSOLELOG']
+Running command ['getUIHandlerNum']
+Running command ['setEventMask', 1, 20, {}, ['bb.runqueue.runQueueExitWait', 'bb.event.LogExecTTY', 'logging.LogRecord', 'bb.build.TaskFailed', 'bb.build.TaskBase', 'bb.event.ParseStarted', 'bb.event.ParseProgress', 'bb.event.ParseCompleted', 'bb.event.CacheLoadStarted', 'bb.event.CacheLoadProgress', 'bb.event.CacheLoadCompleted', 'bb.command.CommandFailed', 'bb.command.CommandExit', 'bb.command.CommandCompleted', 'bb.cooker.CookerExit', 'bb.event.MultipleProviders', 'bb.event.NoProvider', 'bb.runqueue.sceneQueueTaskStarted', 'bb.runqueue.runQueueTaskStarted', 'bb.runqueue.runQueueTaskFailed', 'bb.runqueue.sceneQueueTaskFailed', 'bb.event.BuildBase', 'bb.build.TaskStarted', 'bb.build.TaskSucceeded', 'bb.build.TaskFailedSilent', 'bb.build.TaskProgress', 'bb.event.ProcessStarted', 'bb.event.ProcessProgress', 'bb.event.ProcessFinished']]
+Running command ['getVariable', 'BB_DEFAULT_TASK']
+Running command ['setConfig', 'cmd', 'build']
+Running command ['buildTargets', ['combox-bundle'], 'build']
+Processing Client
+Disconnecting Client
+No timeout, exiting.
+Exiting
