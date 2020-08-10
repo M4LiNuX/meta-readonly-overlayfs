@@ -6,13 +6,15 @@
 
 # -----------------------------------------------------------------------------
 # config
-PATH=/sbin:/bin:/usr/sbin:/usr/bin 
+PATH="/sbin:/bin:/usr/sbin:/usr/bin"
 INIT="/sbin/init"
+BASE="/mnt"
 ROOT_RO="/"
-ROOT_RW="/mnt/data"
+ROOT_RO_NEW="$BASE/ro"
+ROOT_RW="$BASE/rw"
 ROOT_RW_UPPER="$ROOT_RW/upper"
 ROOT_RW_WORK="$ROOT_RW/work"
-rootmnt="/mnt/root"
+rootmnt="$BASE/root"
 
 # -----------------------------------------------------------------------------
 # functions
@@ -83,8 +85,10 @@ if [ $? -ne 0 ]; then
     exit 0
 fi
 
-log "mount read/write partition"
-mount -t tmpfs none /mnt
+log "mount tmpfs on $BASE"
+mount -t tmpfs none $BASE
+
+log "mount read/write partition on $ROOT_RW"
 mkdir -p $rootmnt $ROOT_RW
 mount $OVERLAY_MOUNT $ROOT_RW
 
@@ -92,21 +96,20 @@ log "mount overlayfs"
 mkdir -p $ROOT_RW_UPPER $ROOT_RW_WORK
 mount -t overlay -o lowerdir=$ROOT_RO,upperdir=$ROOT_RW_UPPER,workdir=$ROOT_RW_WORK overlay $rootmnt
 
-log "mount persistent overlay partition"
-mkdir -p $rootmnt/mnt/root-upper
-mount $OVERLAY_MOUNT $rootmnt/mnt/root-upper
+log "mount persistent overlay partition on $rootmnt$ROOT_RW"
+mount $OVERLAY_MOUNT $rootmnt/$ROOT_RW
 umount $ROOT_RW
 
 log "change root to $rootmnt"
-mkdir -p $rootmnt/mnt/root-lower
+mkdir -p $rootmnt/$ROOT_RO_NEW
 cd $rootmnt
-pivot_root . $rootmnt/mnt/root-lower
+pivot_root . $rootmnt/$ROOT_RO_NEW
 
-# new root is set, clear or move unused mounts
-umount /mnt/root-lower/mnt
-mount -n --move /mnt/root-lower/proc /proc
-mount -n --move /mnt/root-lower/dev /dev
-mount -n --move /mnt/root-lower/sys /sys
+log "new root is set, cleanup unsed mounts"
+umount $ROOT_RO_NEW/mnt
+mount -n --move $ROOT_RO_NEW/proc /proc
+mount -n --move $ROOT_RO_NEW/dev /dev
+mount -n --move $ROOT_RO_NEW/sys /sys
 
 log "execute $INIT"
 exec $INIT
