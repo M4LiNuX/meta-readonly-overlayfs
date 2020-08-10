@@ -45,11 +45,17 @@ setup
 # parse kernel boot command line
 parse_args() {
   OVERLAY_MOUNT=
+  OVERLAY_TYPE=
+  OVERLAY_MOUNT_OPTIONS=
   FACTORY_DEFAULT="/sbin/factory-default"
   for CMD_PARAM in $(cat /proc/cmdline); do
       case ${CMD_PARAM} in
           overlay.mount=*)
             OVERLAY_MOUNT="${CMD_PARAM#overlay.mount=}"
+            ;;
+          overlay.type=*)
+            OVERLAY_TYPE="${CMD_PARAM#overlay.type=}"
+            OVERLAY_MOUNT_OPTIONS="-t $OVERLAY_TYPE"
             ;;
           overlay.factorydefault=*)
             FACTORY_DEFAULT="${CMD_PARAM#overlay.factorydefault=}"
@@ -58,6 +64,7 @@ parse_args() {
   done
 
   log "overlay.mount='$OVERLAY_MOUNT'"
+  log "overlay.type='$OVERLAY_TYPE'"
   log "overlay.factorydefault='$FACTORY_DEFAULT'"
 }
 
@@ -90,14 +97,14 @@ mount -t tmpfs none $BASE
 
 log "mount read/write partition on $ROOT_RW"
 mkdir -p $rootmnt $ROOT_RW
-mount $OVERLAY_MOUNT $ROOT_RW
+mount $OVERLAY_MOUNT_OPTIONS $OVERLAY_MOUNT $ROOT_RW
 
 log "mount overlayfs"
 mkdir -p $ROOT_RW_UPPER $ROOT_RW_WORK
 mount -t overlay -o lowerdir=$ROOT_RO,upperdir=$ROOT_RW_UPPER,workdir=$ROOT_RW_WORK overlay $rootmnt
 
 log "mount persistent overlay partition on $rootmnt$ROOT_RW"
-mount $OVERLAY_MOUNT $rootmnt/$ROOT_RW
+mount $OVERLAY_MOUNT_OPTIONS $OVERLAY_MOUNT $rootmnt/$ROOT_RW
 umount $ROOT_RW
 
 log "change root to $rootmnt"
@@ -110,6 +117,9 @@ umount $ROOT_RO_NEW/mnt
 mount -n --move $ROOT_RO_NEW/proc /proc
 mount -n --move $ROOT_RO_NEW/dev /dev
 mount -n --move $ROOT_RO_NEW/sys /sys
+
+log "remove $OVERLAY_MOUNT from /etc/fstab"
+sed -i "/$OVERLAY_MOUNT/d" /etc/fstab
 
 log "execute $INIT"
 exec $INIT
