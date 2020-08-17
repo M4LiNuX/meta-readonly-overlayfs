@@ -37,6 +37,7 @@ run() {
 setup() {
   mount -t proc proc /proc
   mount -t sysfs sysfs /sys
+  mount -t tmpfs tmpfs /tmp
   grep -w "/dev" /proc/mounts >/dev/null || mount -t devtmpfs none /dev
 }
 setup
@@ -117,6 +118,7 @@ umount $ROOT_RO_NEW/mnt
 mount -n --move $ROOT_RO_NEW/proc /proc
 mount -n --move $ROOT_RO_NEW/dev /dev
 mount -n --move $ROOT_RO_NEW/sys /sys
+mount -n --move $ROOT_RO_NEW/tmp /tmp
 
 log "remove $OVERLAY_MOUNT from /etc/fstab"
 sed -i "/$OVERLAY_MOUNT/d" /etc/fstab
