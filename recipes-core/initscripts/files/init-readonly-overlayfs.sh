@@ -163,6 +163,10 @@ mount -o remount,r /
 
 log "remove $OVERLAY_MOUNT from /etc/fstab"
 sed -i "/$OVERLAY_MOUNT/d" /etc/fstab
+if [ ! -z "$CONFIG_MOUNT" ]; then
+    log "remove $CONFIG_MOUNT from /etc/fstab"
+    sed -i "/$CONFIG_MOUNT/d" /etc/fstab
+fi
 
 log "execute $INIT"
 exec $INIT
