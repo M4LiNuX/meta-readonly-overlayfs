@@ -17,6 +17,8 @@ or set filesystem type \
  * `overlay.mount=` holds the upper file system mount and is mandatory. Fallback to tmpfs is currently not supported
  * `overlay.type=` optional parameter which specifies the filefystem type. If not set `overlay.mount` should be a device.
  * `overlay.factorydefault=` pass script to factory default variable which is able to clear the upper layer. One should implement the function `factory_default` in the passed script.
+ * `config.mount=` optional parameter which specifies a configuration layer.
+ * `config.type=` optional parameter which specifies the configuration layer filesystem type.
 
 # References
 The code in this layer is based on the following projects:

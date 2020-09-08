@@ -14,6 +14,7 @@ ROOT_RO_NEW="$BASE/ro"
 ROOT_RW="$BASE/rw"
 ROOT_RW_UPPER="$ROOT_RW/upper"
 ROOT_RW_WORK="$ROOT_RW/work"
+ROOT_CONFIG="$BASE/share"
 rootmnt="$BASE/root"
 
 # -----------------------------------------------------------------------------
@@ -48,6 +49,10 @@ parse_args() {
   OVERLAY_MOUNT=
   OVERLAY_TYPE=
   OVERLAY_MOUNT_OPTIONS=
+  CONFIG_MOUNT="ubi0:share"
+  CONFIG_TYPE="ubifs"
+  CONFIG_MOUNT_OPTIONS="-t $CONFIG_TYPE"
+
   FACTORY_DEFAULT="/sbin/factory-default"
   for CMD_PARAM in $(cat /proc/cmdline); do
       case ${CMD_PARAM} in
@@ -61,12 +66,26 @@ parse_args() {
           overlay.factorydefault=*)
             FACTORY_DEFAULT="${CMD_PARAM#overlay.factorydefault=}"
             ;;
+          config.mount=*)
+            CONFIG_MOUNT="${CMD_PARAM#config.mount=}"
+            ;;
+          config.type=*)
+            CONFIG_TYPE="${CMD_PARAM#config.type=}"
+            CONFIG_MOUNT_OPTIONS="-t $CONFIG_TYPE"
+            ;;
       esac
   done
 
   log "overlay.mount='$OVERLAY_MOUNT'"
   log "overlay.type='$OVERLAY_TYPE'"
   log "overlay.factorydefault='$FACTORY_DEFAULT'"
+  log "config.mount='$CONFIG_MOUNT'"
+  log "config.type='$CONFIG_TYPE'"
+
+  if [ -z "$OVERLAY_MOUNT" ]; then
+      log "ERROR: mandatory options overlay.mount was not set"
+      exit 0
+  fi
 }
 
 # -----------------------------------------------------------------------------
@@ -100,13 +119,27 @@ log "mount read/write partition on $ROOT_RW"
 mkdir -p $rootmnt $ROOT_RW
 mount $OVERLAY_MOUNT_OPTIONS $OVERLAY_MOUNT $ROOT_RW
 
+if [ ! -z "$CONFIG_MOUNT" ]; then 
+    log "mount config partition on $ROOT_CONFIG"
+    mkdir -p $ROOT_CONFIG
+    mount $CONFIG_MOUNT_OPTIONS $CONFIG_MOUNT $ROOT_CONFIG
+fi
+
 log "mount overlayfs"
 mkdir -p $ROOT_RW_UPPER $ROOT_RW_WORK
-mount -t overlay -o lowerdir=$ROOT_RO,upperdir=$ROOT_RW_UPPER,workdir=$ROOT_RW_WORK overlay $rootmnt
+if [ ! -z "$CONFIG_MOUNT" ]; then
+    mount -t overlay -o lowerdir=$ROOT_CONFIG:$ROOT_RO,upperdir=$ROOT_RW_UPPER,workdir=$ROOT_RW_WORK overlay $rootmnt
+else
+    mount -t overlay -o lowerdir=$ROOT_RO,upperdir=$ROOT_RW_UPPER,workdir=$ROOT_RW_WORK overlay $rootmnt
+fi
 
-log "mount persistent overlay partition on $rootmnt$ROOT_RW"
-mount $OVERLAY_MOUNT_OPTIONS $OVERLAY_MOUNT $rootmnt/$ROOT_RW
-umount $ROOT_RW
+log "mount persistent partition on $rootmnt$ROOT_RW"
+mount -n --move /mnt/rw $rootmnt/$ROOT_RW
+
+if [ ! -z "$CONFIG_MOUNT" ]; then
+    log "mount config partition on $rootmnt$ROOT_CONFIG"
+    mount -n --move $ROOT_CONFIG $rootmnt/$ROOT_CONFIG
+fi
 
 log "change root to $rootmnt"
 mkdir -p $rootmnt/$ROOT_RO_NEW
