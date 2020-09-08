@@ -49,9 +49,9 @@ parse_args() {
   OVERLAY_MOUNT=
   OVERLAY_TYPE=
   OVERLAY_MOUNT_OPTIONS=
-  CONFIG_MOUNT="ubi0:share"
-  CONFIG_TYPE="ubifs"
-  CONFIG_MOUNT_OPTIONS="-t $CONFIG_TYPE"
+  CONFIG_MOUNT=
+  CONFIG_TYPE=
+  CONFIG_MOUNT_OPTIONS=
 
   FACTORY_DEFAULT="/sbin/factory-default"
   for CMD_PARAM in $(cat /proc/cmdline); do
@@ -84,7 +84,7 @@ parse_args() {
 
   if [ -z "$OVERLAY_MOUNT" ]; then
       log "ERROR: mandatory options overlay.mount was not set"
-      exit 0
+      fatal
   fi
 }
 
@@ -103,13 +103,13 @@ fi
 modprobe -qb overlay
 if [ $? -ne 0 ]; then
     log "ERROR: missing kernel module overlay"
-    exit 0
+    fatal
 fi
 
 modprobe -qb fuse
 if [ $? -ne 0 ]; then
     log "ERROR: missing kernel module fuse"
-    exit 0
+    fatal
 fi
 
 log "mount tmpfs on $BASE"
@@ -125,21 +125,19 @@ if [ ! -z "$CONFIG_MOUNT" ]; then
     mount $CONFIG_MOUNT_OPTIONS $CONFIG_MOUNT $ROOT_CONFIG
 fi
 
-log "mount overlayfs"
+# mount overlay filesystem
 mkdir -p $ROOT_RW_UPPER $ROOT_RW_WORK
 if [ ! -z "$CONFIG_MOUNT" ]; then
+    log "mount overlayfs with config layer on $ROOT_CONFIG"
     mount -t overlay -o lowerdir=$ROOT_CONFIG:$ROOT_RO,upperdir=$ROOT_RW_UPPER,workdir=$ROOT_RW_WORK overlay $rootmnt
 else
+    log "mount overlayfs"
     mount -t overlay -o lowerdir=$ROOT_RO,upperdir=$ROOT_RW_UPPER,workdir=$ROOT_RW_WORK overlay $rootmnt
 fi
 
-log "mount persistent partition on $rootmnt$ROOT_RW"
-mount -n --move /mnt/rw $rootmnt/$ROOT_RW
-
-if [ ! -z "$CONFIG_MOUNT" ]; then
-    log "mount config partition on $rootmnt$ROOT_CONFIG"
-    mount -n --move $ROOT_CONFIG $rootmnt/$ROOT_CONFIG
-fi
+log "umount $ROOT_RW and $ROOT_CONFIG"
+umount $ROOT_RW
+[ ! -z "$CONFIG_MOUNT" ] && umount $ROOT_CONFIG
 
 log "change root to $rootmnt"
 mkdir -p $rootmnt/$ROOT_RO_NEW
@@ -152,6 +150,16 @@ mount -n --move $ROOT_RO_NEW/proc /proc
 mount -n --move $ROOT_RO_NEW/dev /dev
 mount -n --move $ROOT_RO_NEW/sys /sys
 mount -n --move $ROOT_RO_NEW/tmp /tmp
+
+log "remount $ROOT_RW"
+mkdir -p $ROOT_RW
+mount $OVERLAY_MOUNT_OPTIONS $OVERLAY_MOUNT $ROOT_RW
+if [ ! -z "$CONFIG_MOUNT" ]; then
+    log "remount $ROOT_CONFIG"
+    mkdir -p $ROOT_CONFIG
+    mount $CONFIG_MOUNT_OPTIONS $CONFIG_MOUNT $ROOT_CONFIG
+fi
+mount -o remount,r /
 
 log "remove $OVERLAY_MOUNT from /etc/fstab"
 sed -i "/$OVERLAY_MOUNT/d" /etc/fstab
