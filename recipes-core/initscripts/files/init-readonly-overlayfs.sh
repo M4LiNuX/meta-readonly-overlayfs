@@ -144,7 +144,8 @@ mkdir -p $rootmnt/$ROOT_RO_NEW
 cd $rootmnt
 pivot_root . $rootmnt/$ROOT_RO_NEW
 
-log "new root is set, cleanup unsed mounts"
+# between pivot_root and the remounts should be no logs, because dev was not moved yet
+# new root is set, cleanup unsed mounts
 umount $ROOT_RO_NEW/mnt
 mount -n --move $ROOT_RO_NEW/proc /proc
 mount -n --move $ROOT_RO_NEW/dev /dev
