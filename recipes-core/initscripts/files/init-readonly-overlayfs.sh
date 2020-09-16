@@ -159,7 +159,8 @@ if [ ! -z "$CONFIG_MOUNT" ]; then
     mkdir -p $ROOT_CONFIG
     mount $CONFIG_MOUNT_OPTIONS $CONFIG_MOUNT $ROOT_CONFIG
 fi
-mount -o remount,r /
+mount -o remount,rw /
+[ ! -z "$CONFIG_MOUNT" ] && mount -o remount,ro $ROOT_CONFIG
 
 log "remove $OVERLAY_MOUNT from /etc/fstab"
 sed -i "/$OVERLAY_MOUNT/d" /etc/fstab
