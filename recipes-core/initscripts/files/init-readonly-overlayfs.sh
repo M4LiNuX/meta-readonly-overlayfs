@@ -163,12 +163,17 @@ fi
 mount -o remount,rw /
 [ ! -z "$CONFIG_MOUNT" ] && mount -o remount,ro $ROOT_CONFIG
 
+# check disk usage before
+df $ROOT_RW | grep "100\% $ROOT_RW" > /dev/null && {
+  log "no space left on $OVERLAY_MOUNT"
+} || {
 log "remove $OVERLAY_MOUNT from /etc/fstab"
-sed -i "/$OVERLAY_MOUNT/d" /etc/fstab
-if [ ! -z "$CONFIG_MOUNT" ]; then
-    log "remove $CONFIG_MOUNT from /etc/fstab"
-    sed -i "/$CONFIG_MOUNT/d" /etc/fstab
-fi
+  sed -i "/$OVERLAY_MOUNT/d" /etc/fstab
+  if [ ! -z "$CONFIG_MOUNT" ]; then
+      log "remove $CONFIG_MOUNT from /etc/fstab"
+      sed -i "/$CONFIG_MOUNT/d" /etc/fstab
+  fi
+}
 
 log "execute $INIT"
 exec $INIT
