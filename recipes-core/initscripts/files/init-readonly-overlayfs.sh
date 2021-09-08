@@ -159,6 +159,7 @@ if [ ! -z "$CONFIG_MOUNT" ]; then
     log "remount $ROOT_CONFIG"
     mkdir -p $ROOT_CONFIG
     mount $CONFIG_MOUNT_OPTIONS $CONFIG_MOUNT $ROOT_CONFIG
+    chown root:root $ROOT_CONFIG
 fi
 mount -o remount,rw /
 [ ! -z "$CONFIG_MOUNT" ] && mount -o remount,ro $ROOT_CONFIG
